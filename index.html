@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Navideña para Snoopy</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(135deg, #1b263b 0%, #2b3a4a 50%, #1b263b 100%);
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px 15px;
+            overflow-x: hidden;
+        }
+        .nieve {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(4px 4px at 15% 25%, #ffffff 50%, transparent 50%),
+                radial-gradient(6px 6px at 65% 15%, rgba(255,255,255,0.85) 50%, transparent 50%),
+                radial-gradient(3px 3px at 35% 75%, #ffffff 50%, transparent 50%),
+                radial-gradient(5px 5px at 85% 55%, rgba(255,255,255,0.75) 50%, transparent 50%);
+            background-size: 240px 240px;
+            animation: nevar 9s linear infinite;
+        }
+        @keyframes nevar {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 240px; }
+        }
+        .carta {
+            position: relative;
+            z-index: 1;
+            background-color: #f4f1ea;
+            max-width: 680px;
+            width: 100%;
+            padding: 45px 38px;
+            border-radius: 22px;
+            border: 4px solid #1a1a1a;
+            outline: 6px solid #d62828;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+            text-align: center;
+            color: #1a1a1a;
+        }
+        .encabezado-etiqueta {
+            display: inline-block;
+            background-color: #d62828;
+            color: #ffffff;
+            font-size: 0.85em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+        .imagen-snoopy {
+            width: 210px;
+            height: auto;
+            border-radius: 16px;
+            border: 3px solid #1a1a1a;
+            background-color: #ffffff;
+            padding: 8px;
+            margin-bottom: 20px;
+            box-shadow: 4px 4px 0px #d62828;
+        }
+        h1 {
+            color: #d62828;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .texto-carta {
+            text-align: justify;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e0dcd3;
+            margin-bottom: 28px;
+        }
+        .texto-carta p {
+            font-size: 1.08em;
+            line-height: 1.75;
+            margin-bottom: 15px;
+            color: #2b2b2b;
+        }
+        .texto-carta p:last-child {
+            margin-bottom: 0;
+        }
+        .seccion-planes {
+            background-color: #fff8f6;
+            border: 2px dashed #d62828;
+            border-radius: 16px;
+            padding: 25px 22px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .seccion-planes h2 {
+            color: #1a1a1a;
+            font-size: 1.35em;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .subtitulo-planes {
+            text-align: center;
+            font-size: 0.95em;
+            color: #555555;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+        .lista-opciones {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .opcion-item {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 2px solid #e5e0d8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1.02em;
+        }
+        .opcion-item:hover {
+            border-color: #d62828;
+            transform: translateX(4px);
+        }
+        .opcion-item input[type="checkbox"] {
+            accent-color: #d62828;
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+        .cierre-gif {
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 2px solid #e0dcd3;
+        }
+        .gif-snoopy {
+            width: 230px;
+            height: auto;
+            border-radius: 16px;
+            border: 3px solid #d62828;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(214, 40, 40, 0.2);
+        }
+        .mensaje-final {
+            font-size: 1.55em;
+            font-weight: bold;
+            color: #d62828;
+            margin-bottom: 15px;
+        }
+        .firma {
+            font-style: italic;
+            font-size: 1.15em;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nieve"></div>
+
+    <div class="carta">
+        <div class="encabezado-etiqueta">❄️ Edición Especial de Navidad ❄️</div>
+        <br>
+
+        <!-- Primera imagen: Snoopy con corazón -->
+        <img class="imagen-snoopy" src="imagen.jpg" alt="Snoopy abrazando un corazón rojo">
+
+        <h1>🐾 ¡Feliz Navidad, querido Snoopy! 🎄</h1>
+
+        <div class="texto-carta">
+            <p><strong>Querido Snoopy:</strong></p>
+            <p>
+                Ha llegado la época más bonita y mágica del año, y no quería dejar pasar este momento sin escribirte 
+                una carta muy especial para desearte una Feliz Navidad llena de alegría, paz y muchísimo cariño. 
+                Gracias por ser siempre esa compañía tan tierna, divertida y leal que logra sacar una sonrisa 
+                incluso en los días más fríos del invierno.
+            </p>
+            <p>
+                Espero que esta noche tu casita roja brille más que nunca con las luces navideñas, que no te falte 
+                una cobija calientita y que la magia de estas fechas llene tu corazón de felicidad. Eres el mejor 
+                amigo que cualquiera podría pedir, y celebrar esta Navidad pensando en ti hace que todo sea mucho más especial.
+            </p>
+        </div>
+
+        <!-- Sección interactiva de planes navideños -->
+        <div class="seccion-planes">
+            <h2>🎁 ¿Qué planes haríamos juntos esta Navidad?</h2>
+            <p class="subtitulo-planes">(Marca tus opciones favoritas en los cuadritos)</p>
+            
+            <div class="lista-opciones">
+                <label class="opcion-item">
+                    <input type="checkbox" checked>
+                    <span>🍪 Hornear y comer muchísimas galletas de chispas de chocolate</span>
+                </label>
+                <label class="opcion-item">
+                    <input type="checkbox" checked>
+                    <span>🚶‍♂️ Dar un paseo tranquilo bajo las luces navideñas</span>
+                </label>
+                <label class="opcion-item">
+                    <input type="checkbox" checked>
+                    <span>❤️ Pasar tiempo juntos platicando y abrazándonos mucho</span>
+                </label>
+                <label class="opcion-item">
+                    <input type="checkbox">
+                    <span>☕ Tomar chocolate caliente con bombones frente al arbolito</span>
+                </label>
+                <label class="opcion-item">
+                    <input type="checkbox">
+                    <span>🎬 Ver un maratón de películas navideñas tapados con cobijas</span>
+                </label>
+                <label class="opcion-item">
+                    <input type="checkbox">
+                    <span>🎶 Bailar nuestra canción navideña favorita y tomar muchas fotos</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Cierre con GIF y mensaje final -->
+        <div class="cierre-gif">
+            <img class="gif-snoopy" src="gif.gif" alt="GIF navideño de Snoopy">
+            
+            <div class="mensaje-final">❤️ ¡Te quiero, Feliz Navidad Snoopy! ❤️</div>
+            
+            <div class="firma">
+                Con todo mi cariño,<br>
+                Samy
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
